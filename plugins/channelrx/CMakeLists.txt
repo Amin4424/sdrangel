@@ -67,6 +67,16 @@ else()
     message(STATUS "Not building filesink (ENABLE_CHANNELRX_FILESINK=${ENABLE_CHANNELRX_FILESINK})")
 endif()
 
+
+add_subdirectory(filesinktxt)
+
+
+# if (ENABLE_CHANNELRX_PLOTONLY)
+add_subdirectory(tcpiqplot)
+# else()
+#     message(STATUS "Not building plotonly (ENABLE_CHANNELRX_PLOTONLY=${ENABLE_CHANNELRX_PLOTONLY})")
+# endif()
+
 if (ENABLE_CHANNELRX_FREQTRACKER)
     add_subdirectory(freqtracker)
 else()
@@ -250,4 +260,5 @@ if(NOT SERVER_MODE)
     else()
         message(STATUS "Not building demodatv (ENABLE_CHANNELRX_DEMODATV=${ENABLE_CHANNELRX_DEMODATV})")
     endif()
+
 endif()
